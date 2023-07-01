@@ -1,0 +1,66 @@
+:root {
+    --fontFamily: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --textColor: #212121;
+    --focusColor: #38606b;
+    --textLight: #aac;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html, body {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    display: grid;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    font: 400 16px/24px var(--fontFamily);
+}
+
+.links {
+    display: flex;
+    flex-flow: row;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+a,
+a:link,
+a:visited {
+    color: var(--textColor);
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+a:hover {
+    border-bottom-color: var(--focusColor);
+    color: var(--focusColor);
+}
+
+.page-title {
+    font-weight: 600;
+    font-size: 5rem;
+    line-height: 5rem;
+}
+
+.sub-title {
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.copy  {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    color: var(--textLight);
+}

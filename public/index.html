@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Linus Staf</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<main>
+    <h1 class="page-title">Linus Staf</h1>
+    <h3 class="sub-title">Full stack web developer in Sweden</h3>
+    <nav class="links">
+        <a href="https://github.com/staf/">GitHub</a>
+        <a href="https://www.linkedin.com/in/linus-staf-80101079/">LinkedIn</a>
+        <a rel="me" href="https://mastodon.staf.dev/@linus">Mastodon</a>
+    </nav>
+</main>
+<footer class="copy" title="much important">&copy; <span id="year"></span> Linus Staf</footer>
+<script>
+    const year = document.getElementById('year');
+    if (year){
+        year.textContent = new Date().getFullYear().toString();
+    }
+</script>
+</body>
+</html>
