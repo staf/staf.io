@@ -16,11 +16,11 @@ html, body {
 }
 
 body {
-    position: relative;
     display: grid;
-    align-items: center;
-    min-height: 100vh;
+    gap: 2rem;
     justify-content: center;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     font: 400 16px/24px var(--fontFamily);
 }
 
@@ -29,6 +29,10 @@ body {
     flex-flow: row;
     gap: 1rem;
     margin-top: 2rem;
+}
+
+main {
+    margin-block: auto;
 }
 
 a,
@@ -58,9 +62,8 @@ a:hover {
 }
 
 .copy  {
-    position: absolute;
-    bottom: 1rem;
-    width: 100%;
+    margin-top: auto;
+    padding-block: 1rem;
     text-align: center;
     color: var(--textLight);
 }
