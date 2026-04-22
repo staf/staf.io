@@ -1,26 +1,70 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <title>Linus Staf</title>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-<main>
-    <h1 class="page-title">Linus Staf</h1>
-    <h3 class="sub-title">Full stack web developer in Sweden</h3>
-    <nav class="links">
-        <a href="https://github.com/staf/">GitHub</a>
-        <a href="https://www.linkedin.com/in/linus-staf-80101079/">LinkedIn</a>
-        <a rel="me" href="https://mastodon.social/@linusstaf">Mastodon</a>
-    </nav>
-</main>
-<footer class="copy" title="much important">&copy; <span id="year"></span> Linus Staf</footer>
-<script>
-    const year = document.getElementById('year');
-    if (year){
-        year.textContent = new Date().getFullYear().toString();
-    }
-</script>
-</body>
+    <head>
+        <title>Linus Staf</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <section class="dev-side">
+            <div>
+                <h1 class="name">Linus Staf</h1>
+                <p class="role">full stack web developer in Sweden</p>
+            </div>
+
+            <nav class="dev-links">
+                <a href="https://github.com/staf/">GitHub</a>
+                <a href="https://www.linkedin.com/in/linus-staf-80101079/"
+                    >LinkedIn</a
+                >
+                <a rel="me" href="https://mastodon.social/@linusstaf"
+                    >Mastodon</a
+                >
+            </nav>
+
+            <p class="dev-footer">&copy; <span id="year"></span> Linus Staf</p>
+        </section>
+
+        <section class="wood-side">
+            <div>
+                <p class="eyebrow">also</p>
+                <h2 class="craft-title">Crafted<br /><em>by Linus</em></h2>
+                <p class="craft-desc">
+                    I do woodworking as a hobby and occasionally make videos
+                    about my projects.
+                </p>
+            </div>
+
+            <nav class="wood-links">
+                <a
+                    href="https://youtube.com/@craftedbylinus"
+                    target="_blank"
+                    rel="noopener"
+                    >YouTube</a
+                >
+                <a
+                    href="https://craftedbylinus.com/"
+                    target="_blank"
+                    rel="noopener"
+                    >craftedbylinus.com</a
+                >
+            </nav>
+
+            <p class="wood-footer">craftedbylinus.com</p>
+        </section>
+
+        <script>
+            const year = document.getElementById("year");
+            if (year) {
+                year.textContent = new Date().getFullYear().toString();
+            }
+        </script>
+    </body>
 </html>

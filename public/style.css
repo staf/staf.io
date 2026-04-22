@@ -1,69 +1,227 @@
-:root {
-    --fontFamily: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --textColor: #212121;
-    --focusColor: #38606b;
-    --textLight: #aac;
-}
-
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
-}
-
-html, body {
     box-sizing: border-box;
 }
 
+:root {
+    --dev-bg: #f7f7f6;
+    --dev-text: #1a1a1a;
+    --dev-muted: #999;
+    --dev-hover: #444;
+    --wood-bg: #1c3d2b;
+    --wood-bg-light: #254d37;
+    --wood-text: #f0ede6;
+    --wood-muted: rgba(240, 237, 230, 0.5);
+    --wood-hover: #a8d4b0;
+    --divider: #d4d1ca;
+}
+
+html,
 body {
-    display: grid;
-    gap: 2rem;
-    justify-content: center;
-    min-height: 100vh;
-    min-height: -webkit-fill-available;
-    font: 400 16px/24px var(--fontFamily);
+    height: 100%;
 }
 
-.links {
+body {
     display: flex;
-    flex-flow: row;
-    gap: 1rem;
-    margin-top: 2rem;
+    min-height: 100vh;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-main {
-    margin-block: auto;
+/* ── DEV SIDE ── */
+.dev-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(2rem, 8vw, 5rem) clamp(2rem, 6vw, 5rem);
+    background: var(--dev-bg);
+    border-right: 1px solid var(--divider);
+    font-family: "Fira Code", "Courier New", monospace;
 }
 
-a,
-a:link,
-a:visited {
-    color: var(--textColor);
+.dev-side .name {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
     font-weight: 500;
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
+    letter-spacing: -0.02em;
+    color: var(--dev-text);
+    line-height: 1.1;
 }
 
-a:hover {
-    border-bottom-color: var(--focusColor);
-    color: var(--focusColor);
-}
-
-.page-title {
-    font-weight: 600;
-    font-size: 5rem;
-    line-height: 5rem;
-}
-
-.sub-title {
+.dev-side .role {
+    margin-top: 0.6rem;
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+    color: var(--dev-muted);
     font-weight: 400;
-    font-size: 1.4rem;
-    text-align: center;
+    letter-spacing: 0.01em;
 }
 
-.copy  {
+.dev-side .role::before {
+    content: "// ";
+    opacity: 0.5;
+}
+
+.dev-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: 2.5rem;
+}
+
+.dev-links a {
+    color: var(--dev-text);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dev-links a::before {
+    content: "→";
+    opacity: 0.35;
+    font-size: 0.75rem;
+    transition:
+        opacity 0.15s,
+        transform 0.15s;
+}
+
+.dev-links a:hover {
+    color: var(--dev-hover);
+}
+
+.dev-links a:hover::before {
+    opacity: 0.9;
+    transform: translateX(2px);
+}
+
+.dev-footer {
     margin-top: auto;
-    padding-block: 1rem;
-    text-align: center;
-    color: var(--textLight);
+    padding-top: 3rem;
+    font-size: 0.72rem;
+    color: var(--dev-muted);
+    opacity: 0.6;
+}
+
+/* ── WOOD SIDE ── */
+.wood-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(2rem, 8vw, 5rem) clamp(2rem, 6vw, 5rem);
+    background: var(--wood-bg);
+    font-family: "Lora", Georgia, serif;
+}
+
+.wood-side .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--wood-muted);
+    font-family: "Fira Code", monospace;
+    margin-bottom: 1.2rem;
+}
+
+.wood-side .craft-title {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 500;
+    color: var(--wood-text);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+.wood-side .craft-title em {
+    font-style: italic;
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+.wood-side .craft-desc {
+    margin-top: 1.4rem;
+    font-size: clamp(0.88rem, 1.4vw, 1rem);
+    color: var(--wood-text);
+    opacity: 0.75;
+    max-width: 28ch;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.wood-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-top: 2.5rem;
+}
+
+.wood-links a {
+    color: var(--wood-text);
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 400;
+    font-family: "Fira Code", monospace;
+    letter-spacing: 0.02em;
+    transition: color 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 0.85;
+}
+
+.wood-links a::before {
+    content: "→";
+    opacity: 0.4;
+    font-size: 0.75rem;
+    transition:
+        opacity 0.15s,
+        transform 0.15s;
+}
+
+.wood-links a:hover {
+    color: var(--wood-hover);
+    opacity: 1;
+}
+
+.wood-links a:hover::before {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+.wood-footer {
+    margin-top: auto;
+    padding-top: 3rem;
+    font-size: 0.72rem;
+    color: var(--wood-muted);
+    opacity: 0.45;
+    font-family: "Fira Code", monospace;
+}
+
+/* ── MOBILE ── */
+@media (max-width: 680px) {
+    body {
+        flex-direction: column;
+    }
+
+    .dev-side {
+        border-right: none;
+        border-bottom: 1px solid var(--divider);
+        padding: 3rem 2rem 2.5rem;
+    }
+
+    .wood-side {
+        padding: 3rem 2rem 2.5rem;
+    }
+
+    .dev-footer,
+    .wood-footer {
+        display: none;
+    }
 }
